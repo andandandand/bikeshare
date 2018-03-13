@@ -407,7 +407,35 @@ def get_max_day_of_month(df, month):
     maxDay = max(df["day_of_month"])
     return maxDay
 
+def display_raw_data(df):
+    """
+    Displays the data used to compute the stats
 
+    Input:
+        the dataframe with all the bikeshare data
+
+    Returns: 
+       none
+    """
+
+    #omit auxiliary columns from visualization
+    df = df.drop(['month', 'day_of_month'], axis = 1)
+    
+    rowIndex = 0
+
+    seeData = input("\n Would you like to see rows of the data used to compute the stats? Please write 'yes' or 'no' \n").lower()
+
+    while True:
+
+        if seeData == 'no':
+            return
+
+        if seeData == 'yes':
+            print(df[rowIndex: rowIndex + 5])
+            rowIndex = rowIndex + 5
+
+        
+        seeData = input("\n Would you like to see five more rows of the data used to compute the stats? Please write 'yes' or 'no' \n").lower()
 
 def stats():
     '''Calculates and prints out the descriptive statistics about a city
@@ -430,6 +458,8 @@ def stats():
     monthAndDay = get_day_of_month(df, time_period)
 
     df = apply_time_filters(df, time_period, month, day, monthAndDay)
+
+    display_raw_data(df)
     
     stat_function_list = [popular_month,
      popular_day, popular_hour, 
