@@ -1,6 +1,6 @@
 ## Bikeshare Project (Data Analysis Nanodegree)
 
-I found the folowing resources useful when completing this assignment: 
+I found the following resources useful when completing this assignment: 
 
 https://stackoverflow.com/questions/25873772/how-to-filter-a-dataframe-of-dates-by-a-particular-month-day
 
