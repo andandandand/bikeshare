@@ -283,11 +283,15 @@ def trip_duration(df):
  
     total_travel_time = np.sum(df['Travel Time'])
 
-    print ("The total travel time on 2017 through June was " + str(total_travel_time) + "\n")
+    totalDays = str(total_travel_time).split()[0]
+
+    print ("\nThe total travel time on 2017 through June was " + totalDays + " days \n")
 
     average_travel_time = np.mean(df['Travel Time'])
 
-    print("The average travel time on 2017 through June was " + str(average_travel_time) + "\n")
+    averageDays = str(average_travel_time).split()[0]
+
+    print("The average travel time on 2017 through June was " + averageDays + " days \n")
 
     return total_travel_time, average_travel_time
 
